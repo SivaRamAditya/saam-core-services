@@ -12,7 +12,11 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [AwsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+   static forRoot() {
+     return { ngModule: AppModule, providers: [AwsService] };
+   }
+ }
